@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { User } from "../../../types/types";
+import { useAppContext } from "../../../store/AppDataContext";
 
 const initialUser: User = {
   id: "",
@@ -12,6 +13,7 @@ const initialUser: User = {
 
 const Header: React.FC = () => {
   const [user, setUser] = useState<User>(initialUser);
+  const { selectFriend } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -20,6 +22,7 @@ const Header: React.FC = () => {
     localStorage.removeItem("conversation");
 
     setUser(initialUser);
+    selectFriend(null);
 
     navigate("/");
   };
@@ -38,9 +41,7 @@ const Header: React.FC = () => {
 
   return (
     <div className={styles["container"]}>
-      <div className={styles["Logo"]}>
-        {user.isLoggedIn ? `Hi ${user.name} !` : null}
-      </div>
+      <div className={styles.Logo}>{user.isLoggedIn ? `Hi ${user.name}` : null}</div>
       <nav className={styles["navLinks"]}>
         {user.isLoggedIn ? (
           // Display the logout link if the user is logged in
