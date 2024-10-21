@@ -12,7 +12,18 @@ export interface User {
 export type FriendStatus = "online" | "offline" | "away";
 
 export interface Friend {
-    id: number;
-    name: string;
-    status: FriendStatus;
+  id: number;
+  name: string;
+  status: FriendStatus;
+}
+
+// Message types
+interface Message {
+  messageId: string;
+  text: string;
+  sender: string;
+  receiver: string;
+  isRead: boolean;
+  isEdited: boolean;
+  createdAt: string;
 }
