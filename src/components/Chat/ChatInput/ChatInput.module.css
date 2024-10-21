@@ -1,0 +1,13 @@
+.chat-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.chat-input-container input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
