@@ -53,7 +53,10 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   };
 
   return (
-    <form className={styles["chat-input-container"]} onSubmit={handleSendMessage}>
+    <form
+      className={styles["chat-input-container"]}
+      onSubmit={handleSendMessage}
+    >
       {/* Input field for typing a message */}
       <input
         type="text"
@@ -64,7 +67,12 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
         onChange={handleMessageChange}
       />
       {/* Send button, disabled if the input is empty */}
-      <Button size="medium" variant="contained" text="center" disabled={input.trim().length === 0}>
+      <Button
+        size="medium"
+        variant="contained"
+        text="center"
+        disabled={input.trim().length === 0}
+      >
         Send
       </Button>
     </form>

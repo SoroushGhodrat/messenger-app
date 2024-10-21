@@ -41,7 +41,9 @@ const Header: React.FC = () => {
 
   return (
     <div className={styles["container"]}>
-      <div className={styles.Logo}>{user.isLoggedIn ? `Hi ${user.name}` : null}</div>
+      <div className={styles.Logo}>
+        {user.isLoggedIn ? `Hi ${user.name}` : null}
+      </div>
       <nav className={styles["navLinks"]}>
         {user.isLoggedIn ? (
           // Display the logout link if the user is logged in
