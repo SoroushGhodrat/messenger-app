@@ -15,7 +15,9 @@ const ChatBox: React.FC = () => {
 
   // Get the messages for the selected friend if both user and selected friend are available
   const messages =
-    user && selectedFriend ? chatHistories[user.username]?.[selectedFriend.name] || [] : [];
+    user && selectedFriend
+      ? chatHistories[user.username]?.[selectedFriend.name] || []
+      : [];
 
   return (
     <div className={styles["chat-box-container"]}>

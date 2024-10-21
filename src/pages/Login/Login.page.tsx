@@ -88,7 +88,9 @@ const Login: React.FC = () => {
           onChange={handleUsername}
         />
         {/* Display error message for username if any */}
-        {error.usernameError && <Alert color="red">{error.usernameError}</Alert>}
+        {error.usernameError && (
+          <Alert color="red">{error.usernameError}</Alert>
+        )}
 
         <input
           required
@@ -99,11 +101,18 @@ const Login: React.FC = () => {
           onChange={handlePassword}
         />
         {/* Display error message for password if any */}
-        {error.passwordError && <Alert color="red">{error.passwordError}</Alert>}
+        {error.passwordError && (
+          <Alert color="red">{error.passwordError}</Alert>
+        )}
       </fieldset>
 
       <section>
-        <Button variant="contained" size="large" text="center" onClick={handleLogin}>
+        <Button
+          variant="contained"
+          size="large"
+          text="center"
+          onClick={handleLogin}
+        >
           Login
         </Button>
         <Button variant="outlined" size="large" text="center" disabled>
