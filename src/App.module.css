@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: calc(33.33% - 20px); */
+  background-color: #282c34;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: row;
+    background-color: #282c34;
+    width: 100%;
+  }
+}
