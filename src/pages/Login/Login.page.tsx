@@ -75,7 +75,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form action="" className={styles["login-from"]}>
+    <form action="" className={styles["login-form"]}>
       <h1 className={styles["login-form-title"]}>Login to your account!</h1>
 
       <fieldset className={styles["inputs"]}>
