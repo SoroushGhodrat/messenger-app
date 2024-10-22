@@ -75,7 +75,6 @@ The project structure is organized as follows:
 - `src/utils`: Utility functions used across the application.
 - `src/mock`: Mock data used for development and testing.
 
-
 ## License
 
 This project is licensed under the MIT License.

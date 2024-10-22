@@ -12,9 +12,9 @@ const AppDataContext = createContext<AppDataContextType | any>(undefined);
 
 export const useAppContext = () => {
   const context = useContext(AppDataContext);
-  //   if (!context) {
-  //     throw new Error("useAppContext must be used within an AppDataProvider");
-  //   }
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppDataProvider");
+  }
   return context;
 };
 
