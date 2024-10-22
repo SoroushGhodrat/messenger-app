@@ -7,8 +7,7 @@
 }
 
 .chat-input-container {
-  flex: 0 0 auto;
-  padding: 0 10px;
+  /* flex: 0 0 auto; */
   background-color: #f1f1f1;
   border-top: 1px solid #ccc;
   position: sticky;
@@ -19,7 +18,8 @@
 .chat-box-header {
   display: flex;
   align-items: center;
-  padding: 10px;
+  /* padding: 0 10px; */
+  height: 60px;
   background-color: #ebe9e9;
   border-bottom: 1px solid #ebe9e9;
   text-align: left;
@@ -27,6 +27,7 @@
 
 .chat-box-header h5 {
   padding-left: 5px;
+  color: #007bff;
 }
 
 .chat-box-header h3 {

@@ -9,7 +9,7 @@ const ChatPage: React.FC = () => {
       {/* Sidebar containing the friends list and search bar */}
       <aside className={styles["chat-sidebar"]}>
         <header className={styles["chat-sidebar-header"]}>
-          <h1>Chats</h1>
+          <h3>Chats</h3>
         </header>
 
         {/* Search bar for filtering friends */}

@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
   align-items: center;
   padding: 10px;
   background-color: #282c34;
@@ -9,7 +10,7 @@
   box-shadow: 0 2px 4px rgba(210, 207, 207, 0.1);
   position: fixed; /* Fix the header at the top */
   top: 0; /* Position it at the top */
-  z-index: 1000; /* Ensure it stays above other content */
+  /* z-index: 1000; Ensure it stays above other content */
 }
 
 .Logo {
@@ -33,22 +34,4 @@
 
 .navLink:hover {
   color: #16589f;
-}
-
-@media (max-width: 768px) {
-  .Container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navLinks {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .navLink {
-    width: 100%;
-    padding: 10px 0;
-  }
 }
