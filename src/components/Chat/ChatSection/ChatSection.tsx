@@ -2,10 +2,10 @@ import React from "react";
 import Avatar from "../../UI/Avatar/Avatar";
 import { useAppContext } from "../../../store/AppDataContext";
 import ChatInput from "../ChatInput/ChatInput";
-import styles from "./ChatBox.module.css";
-import ConversationsList from "../Conversations/ConversationsList";
+import styles from "./ChatSection.module.css";
+import ConversationsList from "../ConversationsList/ConversationsList";
 
-const ChatBox: React.FC = () => {
+const ChatSection: React.FC = () => {
   // Retrieve selected friend and chat histories from the context
   const { selectedFriend, chatHistories } = useAppContext();
 
@@ -16,7 +16,7 @@ const ChatBox: React.FC = () => {
   // Get the messages for the selected friend if both user and selected friend are available
   const messages =
     user && selectedFriend
-      ? chatHistories[user.username]?.[selectedFriend.name] || []
+      ? chatHistories[user.name]?.[selectedFriend.name] || []
       : [];
 
   return (
@@ -30,7 +30,7 @@ const ChatBox: React.FC = () => {
           </>
         ) : (
           // Prompt the user to select a friend if none is selected
-          <h3>Select a friend to start a chat!</h3>
+          <p>Select a friend to start a chat!</p>
         )}
       </header>
 
@@ -47,4 +47,4 @@ const ChatBox: React.FC = () => {
   );
 };
 
-export default ChatBox;
+export default ChatSection;

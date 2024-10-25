@@ -1,19 +1,12 @@
 .chat-input-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: #f0f0f0;
 }
 
 .chat-input-container input {
-  width: 100%;
+  flex: 2;
   padding: 10px;
-  margin: 5px;
-  border: 1px solid #007bff;
-  border-radius: 5px;
-}
-
-.chat-input-container :focus {
-  outline: 1px solid #007bff;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
 }

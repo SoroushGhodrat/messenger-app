@@ -1,34 +1,16 @@
-import React from "react";
 import styles from "./ChatPage.module.css";
-import ChatBox from "../../components/Chat/ChatBox/ChatBox";
-import FriendsList from "../../components/Chat/FriendsList/FriendsList";
+import SideMenu from "../../components/Chat/SideMenue/SideMenu";
+import ContactsSection from "../../components/Chat/ContactsSection/ContactsSection";
+import ChatSection from "../../components/Chat/ChatSection/ChatSection";
 
-const ChatPage: React.FC = () => {
+const ChatPage = () => {
   return (
-    <div className={styles["chat-container"]}>
-      {/* Sidebar containing the friends list and search bar */}
-      <aside className={styles["chat-sidebar"]}>
-        <header className={styles["chat-sidebar-header"]}>
-          <h3>Chats</h3>
-        </header>
+    <div className={styles["container"]}>
+      <SideMenu />
 
-        {/* Search bar for filtering friends */}
-        <div className={styles["chat-search-bar"]}>
-          <input type="search" id="search" name="search" placeholder="Search" />
-        </div>
+      <ContactsSection />
 
-        {/* Navigation containing the friends list */}
-        <nav className={styles["friends-list"]}>
-          <FriendsList />
-        </nav>
-      </aside>
-
-      {/* Main chat box area */}
-      <main className={styles["chat-box"]}>
-        <section className={styles["message-list"]}>
-          <ChatBox />
-        </section>
-      </main>
+      <ChatSection />
     </div>
   );
 };
