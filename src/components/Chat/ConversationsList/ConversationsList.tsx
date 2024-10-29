@@ -8,6 +8,7 @@ type ConversationsProps = {
 
 // ConversationsList component to display a list of messages
 const ConversationsList: React.FC<ConversationsProps> = ({ messages }) => {
+  console.log("message in ConversationsList", messages);
   return (
     <div className={styles["conversations-container"]}>
       {/* Map over the messages array and render each message */}
@@ -16,7 +17,9 @@ const ConversationsList: React.FC<ConversationsProps> = ({ messages }) => {
           <strong>
             <em>{new Date(message.createdAt).toLocaleString()}</em>
           </strong>
-          <div className={styles["message-text"]}>{message.text}</div>
+          <div className={styles["message-text"]}>
+            <p>{message.text}</p>
+          </div>
         </div>
       ))}
     </div>

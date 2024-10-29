@@ -1,0 +1,13 @@
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #007bff;
+  font-size: 25px;
+}

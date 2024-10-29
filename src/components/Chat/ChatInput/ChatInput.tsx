@@ -10,7 +10,7 @@ interface ChatInputProps {
 }
 
 interface User {
-  username: string;
+  name: string;
 }
 
 const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
@@ -37,14 +37,14 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
       const newMessage: Message = {
         messageId: uuidv4(),
         text: input.trim(),
-        sender: user.username,
+        sender: user.name,
         receiver: selectedFriend.name,
         isRead: false,
         isEdited: false,
         createdAt: new Date().toISOString(),
       };
       // Add the message to the chat history
-      addMessage(user.username, selectedFriend.name, newMessage);
+      addMessage(user.name, selectedFriend.name, newMessage);
       // Send the new message to the parent component
       onSendMessage(newMessage);
       // Clear the input field

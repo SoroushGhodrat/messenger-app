@@ -1,7 +1,12 @@
-.chat-container {
+.container {
+  box-sizing: border-box;
   display: flex;
-  height: calc(100vh - 120px);
-  width: 60vw;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 0.5rem);
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #92a8d1;
 }
 
 .chat-sidebar {
