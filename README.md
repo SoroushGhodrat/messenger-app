@@ -102,7 +102,7 @@ The project structure is organized as follows:
 ```
 
 
-### Some markdown
+### Frontend Microservices Strategy
 ```mermaid
 graph LR;
     subgraph Main Container
