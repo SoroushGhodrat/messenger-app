@@ -1,6 +1,9 @@
 # Getting Started with Messenger App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Branches
+
+- **dev**: This branch contains the initial project code, developed within a time constraint of 2 hours.
+- **improvement**: This branch includes additional work beyond the initial 2-hour development period. It focuses on refactoring and enhancing the project.
 
 ## How to Clone and Install the Project
 
@@ -57,7 +60,7 @@ This project uses the following libraries and technologies:
 - **UUID**: A library for generating unique identifiers.
 - **Local Storage**: Used for storing user data persistently in the browser.
 - **Context API**: Used for managing global state in the application.
-- **React Testing Library**: A library for testing React components.
+- **Ant Design Icons**: A set of high-quality icons and symbols for use in web applications, provided by the Ant Design system.
 
 ## Project Structure
 
@@ -74,7 +77,6 @@ The project structure is organized as follows:
 - `src/types`: Contains TypeScript type definitions.
 - `src/utils`: Utility functions used across the application.
 - `src/mock`: Mock data used for development and testing.
-
 
 ## License
 
