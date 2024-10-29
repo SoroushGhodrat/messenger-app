@@ -70,10 +70,108 @@ The project structure is organized as follows:
 - `src/pages`: Contains the main pages of the application.
   - `Chat`: The chat page.
   - `Login`: The login page.
+  - `404`: Error page.
 - `src/store`: Contains the context and state management logic.
 - `src/types`: Contains TypeScript type definitions.
 - `src/utils`: Utility functions used across the application.
 - `src/mock`: Mock data used for development and testing.
+
+```
+───src
+    ├───components
+    │   ├───Chat
+    │   │   ├───ChatInput
+    │   │   ├───ChatSection
+    │   │   ├───ContactsSection
+    │   │   ├───ConversationsList
+    │   │   ├───FriendsList
+    │   │   └───SideMenue
+    │   └───UI
+    │       ├───Alert
+    │       ├───Avatar
+    │       ├───Button
+    │       └───Search
+    ├───mock
+    ├───pages
+    │   ├───404
+    │   ├───Chat
+    │   └───Login
+    ├───store
+    ├───types
+    └───utility
+```
+
+
+### Some markdown
+```mermaid
+graph LR;
+    subgraph Main Container
+    A[Main Container]
+    A1[index.js]
+    A2[App.js]
+    A3[webpack.config.js]
+    end
+
+    subgraph Chat Service
+    B[Chat Service]
+    B1[ChatInput]
+    B2[ChatSection]
+    B3[ContactsSection]
+    B4[ConversationsList]
+    B5[FriendsList]
+    B6[SideMenue]
+    B7[index.js]
+    B8[webpack.config.js]
+    end
+    
+    subgraph User Service
+    C[User Service]
+    C1[Login]
+    C2[index.js]
+    C3[webpack.config.js]
+    end
+
+    subgraph Notification Service
+    D[Notification Service]
+    D1[Alert]
+    D2[index.js]
+    D3[webpack.config.js]
+    end
+
+    subgraph UI Components Service
+    E[UI Components Service]
+    E1[Avatar]
+    E2[Button]
+    E3[Search]
+    E4[index.js]
+    E5[webpack.config.js]
+    end
+
+    A -->|Uses| B
+    A -->|Uses| C
+    A -->|Uses| D
+    A -->|Uses| E
+```
+## Explanation
+
+### Main Container:
+- **Files**: `index.js`, `App.js`, `webpack.config.js`
+
+### Chat Service:
+- **Components**: `ChatInput`, `ChatSection`, `ContactsSection`, `ConversationsList`, `FriendsList`, `SideMenue`
+- **Files**: `index.js`, `webpack.config.js`
+
+### User Service:
+- **Components**: `Login`
+- **Files**: `index.js`, `webpack.config.js`
+
+### Notification Service:
+- **Components**: `Alert`
+- **Files**: `index.js`, `webpack.config.js`
+
+### UI Components Service:
+- **Components**: `Avatar`, `Button`, `Search`
+- **Files**: `index.js`, `webpack.config.js`
 
 ## License
 
