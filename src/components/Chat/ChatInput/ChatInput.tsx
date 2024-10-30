@@ -13,10 +13,21 @@ interface User {
   name: string;
 }
 
+type DraftMessage = {
+  friendId: string
+  text: string
+}
+
+type DraftMessage = {
+  friendId: string
+  text: string
+}
+
 const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
   const [user, setUser] = useState<User | null>(null);
   const { selectedFriend, addMessage } = useAppContext();
+  const [draftMessage, setDraftMesage] = useState<string| null>(null)
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -27,13 +38,41 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   }, []);
 
   const handleMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
+    const inputText = e.target.value
+    setInput(inputText);
+
+
   };
+
+  console.log('friend', selectedFriend)
+
+
+
+  // TODO: find a way to save draft messages for each friend
+  useEffect(() => {
+    if (selectedFriend) {
+      const draftHistory = JSON.parse(localStorage.getItem("text") || "{}");
+      const friendId = selectedFriend.id;
+
+      const value = JSON.stringify({
+        ...draftHistory,
+        [friendId]: input,
+      });
+
+      localStorage.setItem("text", value);
+    }
+  }, [input, selectedFriend]);
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
 
+
+
+    
+
     if (input.trim().length > 0 && selectedFriend && user) {
+ 
+
       const newMessage: Message = {
         messageId: uuidv4(),
         text: input.trim(),
