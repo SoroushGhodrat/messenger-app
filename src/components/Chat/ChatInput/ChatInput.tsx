@@ -13,15 +13,7 @@ interface User {
   name: string;
 }
 
-type DraftMessage = {
-  friendId: string
-  text: string
-}
-
-type DraftMessage = {
-  friendId: string
-  text: string
-}
+ 
 
 const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
