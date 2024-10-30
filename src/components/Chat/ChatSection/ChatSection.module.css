@@ -1,37 +1,37 @@
 .chat-box-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  flex: 0 0 50%;
+  border-radius: 10px;
+  overflow: auto;
 }
 
 .chat-input-container {
-  flex: 0 0 auto;
   padding: 0 10px;
-  background-color: #f1f1f1;
+  background-color: #4465a2;
   border-top: 1px solid #ccc;
   position: sticky;
   bottom: 0;
-  width: 100%;
 }
 
 .chat-box-header {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #ebe9e9;
+  background-color: #4465a2;
   border-bottom: 1px solid #ebe9e9;
   text-align: left;
+  color: #fff;
 }
 
 .chat-box-header h5 {
   padding-left: 5px;
 }
 
-.chat-box-header h3 {
-  margin: 0 auto;
-  color: #007bff;
+.chat-box-header p {
+  width: 100%;
+  text-align: center;
+  color: #fff;
 }
 
 .conversations-list {

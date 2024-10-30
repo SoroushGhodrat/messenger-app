@@ -14,17 +14,27 @@ const FriendsList: React.FC = () => {
   };
 
   return (
-    // Container for the friends list
     <div className={styles["container"]}>
+      <header>
+        <h1>Chats</h1>
+      </header>
       {/* Map over the FriendsListData array and render each friend */}
       {FriendsListData.map((friend) => (
         <div
           key={friend.id}
-          className={styles["friend"]}
+          className={styles.friend}
           onClick={() => handleSelectFriend(friend)}
         >
-          <Avatar status={friend.status} />
-          <div className={styles["friend-name"]}>{friend.name}</div>
+          <div className={styles["friend-top"]}>
+            <div className={styles["friend-left-side"]}>
+              <Avatar status={friend.status} />
+              <div className={styles["friend-name"]}>{friend.name}</div>
+            </div>
+            <div className={styles["friend-right-side"]}>
+              <div className={styles["last-message-time"]}>20/12/2024</div>
+            </div>
+          </div>
+          <div className={styles["last-message"]}>Show the last message</div>
         </div>
       ))}
     </div>

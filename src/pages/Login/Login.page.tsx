@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 import { stringNormalizer } from "../../utility/helper";
 import { v4 as uuidv4 } from "uuid";
+import { useAppContext } from "../../store/AppDataContext";
 
 type Error = {
   usernameError: string | null;
@@ -21,6 +22,7 @@ const Login: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string | null>(null);
   const [error, setError] = useState<Error>(initialErrorValue);
+  const { setUser } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -49,6 +51,7 @@ const Login: React.FC = () => {
         id: uuidv4(),
         status: "online",
       };
+      setUser(user);
       localStorage.setItem("user", JSON.stringify(user));
       resetForm();
       navigate("/chat");
@@ -75,54 +78,56 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form action="" className={styles["login-from"]}>
-      <h1 className={styles["login-form-title"]}>Login to your account!</h1>
+    <div className={styles["login-container"]}>
+      <form action="" className={styles["login-form"]}>
+        <h1 className={styles["login-form-title"]}>Login to your account!</h1>
 
-      <fieldset className={styles["inputs"]}>
-        <input
-          required
-          type="text"
-          autoComplete="username"
-          placeholder="Username"
-          id="username"
-          onChange={handleUsername}
-        />
-        {/* Display error message for username if any */}
-        {error.usernameError && (
-          <Alert color="red">{error.usernameError}</Alert>
-        )}
+        <fieldset className={styles["inputs"]}>
+          <input
+            required
+            type="text"
+            autoComplete="username"
+            placeholder="Username"
+            id="username"
+            onChange={handleUsername}
+          />
+          {/* Display error message for username if any */}
+          {error.usernameError && (
+            <Alert color="red">{error.usernameError}</Alert>
+          )}
 
-        <input
-          required
-          type="password"
-          autoComplete="current-password"
-          placeholder="Password"
-          id="password"
-          onChange={handlePassword}
-        />
-        {/* Display error message for password if any */}
-        {error.passwordError && (
-          <Alert color="red">{error.passwordError}</Alert>
-        )}
-      </fieldset>
+          <input
+            required
+            type="password"
+            autoComplete="current-password"
+            placeholder="Password"
+            id="password"
+            onChange={handlePassword}
+          />
+          {/* Display error message for password if any */}
+          {error.passwordError && (
+            <Alert color="red">{error.passwordError}</Alert>
+          )}
+        </fieldset>
 
-      <section>
-        <Button
-          variant="contained"
-          size="large"
-          text="center"
-          onClick={handleLogin}
-        >
-          Login
-        </Button>
-        <Button variant="outlined" size="large" text="center" disabled>
-          Register
-        </Button>
-        <Button variant="text" size="large" text="left" disabled>
-          Forgot password?
-        </Button>
-      </section>
-    </form>
+        <section>
+          <Button
+            variant="contained"
+            size="large"
+            text="center"
+            onClick={handleLogin}
+          >
+            Login
+          </Button>
+          <Button variant="outlined" size="large" text="center" disabled>
+            Register
+          </Button>
+          <Button variant="text" size="large" text="left" disabled>
+            Forgot password?
+          </Button>
+        </section>
+      </form>
+    </div>
   );
 };
 

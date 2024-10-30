@@ -1,0 +1,20 @@
+.contacts-section-container {
+  display: flex;
+  flex: 0 0 30%;
+  flex-direction: column;
+  background-color: #4465a2;
+  border-radius: 10px;
+  overflow: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.search-container {
+  border-color: #007bff;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+.contact-list {
+  padding-bottom: 10px;
+  display: flex;
+}

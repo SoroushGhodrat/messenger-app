@@ -1,7 +1,12 @@
-.chat-container {
+.container {
+  box-sizing: border-box;
   display: flex;
-  height: calc(100vh - 110px);
-  width: 50vw;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 0.5rem);
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #92a8d1;
 }
 
 .chat-sidebar {
@@ -12,8 +17,8 @@
   width: 30%;
   height: 100%;
   overflow-y: auto;
-  padding: 0;
-  margin: 0;
+  padding: 0px 5px;
+  margin: 10px0;
   background-color: #f0f0f0;
   border-right: 1px solid #d0d0d0;
 }
@@ -32,13 +37,15 @@
 
 .chat-sidebar-header {
   width: 100%;
-  text-align: center;
+  text-align: left;
   border: none;
   color: #007bff;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .chat-search-bar {
-  padding: 10px;
   width: 100%;
   background-color: #f0f0f0;
   border-bottom: 1px solid #d0d0d0;
@@ -47,7 +54,12 @@
 .chat-search-bar input {
   width: 100%;
   padding: 10px;
-  border: none;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+}
+
+.chat-search-bar input:focus {
+  outline: 1px solid #007bff;
 }
 
 .friends-list {
@@ -62,4 +74,16 @@
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .chat-container {
+    width: 100vw;
+  }
+  .chat-sidebar {
+    width: 30%;
+  }
+  .chat-box {
+    width: 70%;
+  }
 }

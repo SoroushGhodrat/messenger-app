@@ -1,26 +1,22 @@
 .message {
-  background-color: #f1f1f1;
+  background-color: #5473ae;
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
   max-width: 60%;
-  word-wrap: break-word;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .message strong {
   display: block;
   font-size: 0.9em;
-  color: #555;
 }
 
 .message em {
   font-size: 0.8em;
-  color: #888;
 }
 
 .message-text {
   margin-top: 5px;
-  font-size: 1em;
-  color: #333;
+  font-size: 1.2em;
 }
